@@ -31,10 +31,11 @@ public class WordGuesser {
         ArrayList<Character> wordHidden = new ArrayList<>();
 
         for (int i = 0; i < currentWordAsCharacters.length; i++) {
-            wordHidden.add(i, currentWordAsCharacters[i]);
-            wordHidden.add(i, ' ');
+            wordHidden.add(currentWordAsCharacters[i]("\\S", "_"));
+            wordHidden.add(' ');
         }
         System.out.println(wordHidden);
+
         //currentWord.replaceAll("\\S", "_");
 
         //This will store guesses for current round.
