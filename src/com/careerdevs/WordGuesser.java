@@ -1,6 +1,7 @@
 package com.careerdevs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class WordGuesser {
 
@@ -11,26 +12,38 @@ public class WordGuesser {
 
     //This will store total number of guesses during round.
     public static int guessesMade;
-    //Need to figure out way to present current word as blank spaces
-    //using this to test.
-    public static String currentWord = "easy";
-    //Im thinking... using a replace?
-    public static String wordHidden = currentWord.replaceAll("\\S", "_");
-    //This will store guesses for current round.
+   //This will store each letter guessed.
     public static ArrayList<Character> lettersGuessed = new ArrayList<>();
 
 
     public static void wordGuesser() {
-
-
+        newWord();
+        currentRoundSummary();
 
 
 
     }
 
+    public static void newWord() {
+
+        String currentWord = "easy";
+        char[] currentWordAsCharacters = currentWord.toCharArray();
+        ArrayList<Character> wordHidden = new ArrayList<>();
+
+        for (int i = 0; i < currentWordAsCharacters.length; i++) {
+            wordHidden.add(i, currentWordAsCharacters[i]);
+            wordHidden.add(i, ' ');
+        }
+        System.out.println(wordHidden);
+        //currentWord.replaceAll("\\S", "_");
+
+        //This will store guesses for current round.
+
+    }
+
     public static void currentRoundSummary() {
         System.out.println("Guesses made:" + guessesMade);
-        System.out.println("Word:" + wordHidden);
+        System.out.println("Word:");
         System.out.println("Guesses:" + lettersGuessed);
     }
 
