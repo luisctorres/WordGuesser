@@ -1,7 +1,6 @@
 package com.careerdevs;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class WordGuesser {
 
@@ -27,12 +26,24 @@ public class WordGuesser {
     public static void newWord() {
 
         String currentWord = "easy";
+        //Take current word and makes a char array.
         char[] currentWordAsCharacters = currentWord.toCharArray();
+        //initialize wordHidden Arraylist
         ArrayList<Character> wordHidden = new ArrayList<>();
 
+        //this loop takes current word and makes a hidden (underscore version)
         for (int i = 0; i < currentWordAsCharacters.length; i++) {
-            wordHidden.add(currentWordAsCharacters[i]("\\S", "_"));
+            //converts current letter to string to allow replaceAll() method
+            String currentLetter = String.valueOf(currentWordAsCharacters[i]);
+            //this replaces letter with an underscore
+            String stringToUnderscore = currentLetter.replaceAll("\\S", "_");
+            //adds it to wordHidden Arraylist
+            wordHidden.add(stringToUnderscore.charAt(0));
+            //adds a space in between characters
             wordHidden.add(' ');
+            //resets currentLetterBeingReplaced
+            currentLetter = "";
+
         }
         System.out.println(wordHidden);
 
@@ -44,7 +55,7 @@ public class WordGuesser {
 
     public static void currentRoundSummary() {
         System.out.println("Guesses made:" + guessesMade);
-        System.out.println("Word:");
+        System.out.println("Word:" );
         System.out.println("Guesses:" + lettersGuessed);
     }
 
