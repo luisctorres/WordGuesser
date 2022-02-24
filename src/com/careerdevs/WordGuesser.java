@@ -41,7 +41,7 @@ public class WordGuesser {
             wordHidden.add(stringToUnderscore.charAt(0));
             //adds a space in between characters
             wordHidden.add(' ');
-            //resets currentLetterBeingReplaced
+            //resets currentLetterBeingReplaced for reuse
             currentLetter = "";
 
         }
