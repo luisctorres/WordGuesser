@@ -34,6 +34,7 @@ public class WordGuesser {
         //this loop takes current word and makes a hidden (underscore version)
         for (int i = 0; i < currentWordAsCharacters.length; i++) {
             //converts current letter to string to allow replaceAll() method
+
             String currentLetter = String.valueOf(currentWordAsCharacters[i]);
             //this replaces letter with an underscore
             String stringToUnderscore = currentLetter.replaceAll("\\S", "_");
@@ -46,7 +47,7 @@ public class WordGuesser {
 
         }
         System.out.println(wordHidden);
-
+        System.out.println(currentWordAsCharacters);
         //currentWord.replaceAll("\\S", "_");
 
         //This will store guesses for current round.
